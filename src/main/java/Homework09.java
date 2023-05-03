@@ -30,5 +30,25 @@ What is the value of the first triangle number to have over one hundred divisors
     
     */
     
+    int triangleNumber = 0;
+    int divisorsCounter = 0;
+    int counter = 1;
+    
+    while (divisorsCounter <= 100) {
+      triangleNumber = triangleNumber + counter;
+      // Initialize the divisorsCounter to 0
+      divisorsCounter = 0;
+      // Iterate from 1 to the triangle number to find the number of divisors
+      for (int i = 1; i <= triangleNumber; i++) {
+        // Check if the number is divisible by i
+        if (triangleNumber % i == 0) {
+          // Increase the divisorsCounter
+          divisorsCounter++;
+        }
+      }
+      counter++;
+    }
+    // Print the triangle number
+    System.out.println("The first triangle number to have over one hundred divisors is " + triangleNumber);
     
 }
